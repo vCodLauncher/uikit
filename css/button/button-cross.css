@@ -1,0 +1,52 @@
+.button-cross {
+    color: white;
+    background-color: #a61d1d;
+    text-align: center;
+    padding: 8px 13px;
+    margin: 10px;
+    display: inline-block;
+    width: 2.5rem; /* Taille ajustée pour un bouton carré */
+    height: 2.5rem;
+    border: 4px solid #701c1c;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    cursor: pointer; /* Style de curseur pour indiquer que c'est un bouton */
+}
+
+/* Barres pour le bouton croix */
+.button-cross:before, .button-cross:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%; /* taille de la barre */
+    height: 4px; /* épaisseur de la barre */
+    background-color: white;
+}
+
+.button-cross:before {
+    transform: translate(-50%, -50%) rotate(45deg); /* barre diagonale vers le haut à gauche */
+}
+
+.button-cross:after {
+    transform: translate(-50%, -50%) rotate(-45deg); /* barre diagonale vers le bas à droite */
+}
+
+/* Hover Animation pour le bouton croix */
+.button-cross:hover {
+    background-color: #b7253d;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Active/Click Animation pour le bouton croix */
+.button-cross:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.button-cross:focus {
+    box-shadow: 0 0 0 2px rgba(155, 45, 45, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}

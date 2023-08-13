@@ -1,0 +1,56 @@
+.button-default {
+    color: white;
+    background-color: #a61d1d;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 8px 13px; /* Réduisez un peu le padding pour compenser l'ajout des bordures */
+    margin: 10px;
+    display: inline-block;
+    width: 15rem;
+    height: 2rem;
+    border: 4px solid #701c1c; /* Bordure principale */
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2); /* Bordure interne subtile pour le relief */
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.button-slanted {
+    -ms-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+/* Hover Animation */
+.button-default:hover {
+    background-color: #b7253d;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3); /* Augmenter la luminosité de la bordure interne pour plus d'accentuation au survol */
+}
+
+.button-default:hover::after {
+    width: 100%;
+}
+
+/* Active/Click Animation */
+.button-default:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.1); /* Réduire la luminosité de la bordure interne pour donner un effet enfoncé */
+}
+
+/* Effet d'onde lors du survol */
+.button-default::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-50%);
+    transition: width 0.25s;
+}
+
+.button-default:focus {
+    box-shadow: 0 0 0 2px rgba(155, 45, 45, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
