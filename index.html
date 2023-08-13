@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="css/button/dropdown.css">
 <link rel="stylesheet" href="css/card/card.css">
 <link rel="stylesheet" href="css/card/matchtype.css">
+<link rel="stylesheet" href="css/card/roomtype.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
@@ -50,6 +51,38 @@
             </p>
         </div>
     </div>
+
+    <div class="container-roomtype">
+        <div class="roomtype-card">
+            <p class="text-container">
+                <span class="roomtype-title">SEARCH & DESTROY</span>
+                <br />
+                <span class="matchtype-description"></span>
+            </p>
+        </div>
+        <div class="roomtype-card">
+            <p class="text-container">
+                <span class="roomtype-title">TEAM DEATHMATCH</span>
+                <br />
+                <span class="matchtype-description"></span>
+            </p>
+        </div>
+        <div class="roomtype-card">
+            <p class="text-container">
+                <span class="roomtype-title">DEATHMATCH</span>
+                <br />
+                <span class="matchtype-description"></span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.roomtype-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
 
 <script>
     document.querySelector('.matchtype-card').addEventListener('click', function() {

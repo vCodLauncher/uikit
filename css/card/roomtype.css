@@ -1,0 +1,31 @@
+.roomtype-card {
+    width: 18rem;
+    height: 12rem;
+    border: 2px solid gray;
+    background-image:
+            /*linear-gradient(to top, black, transparent),*/
+            url("../../assets/cards/card11.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%); /* rend l'image en noir et blanc */
+    border-radius: 2px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color : white;
+    flex-direction: column;
+}
+
+.roomtype-card.active {
+    filter: grayscale(0%); /* restaure les couleurs originales */
+    border: 2px solid #af2e2e;
+    color: #d51634;
+}
+
+.roomtype-title {
+    text-transform: uppercase;
+    font-family: 'Roboto mono';
+    font-size: 25px;
+}
+
