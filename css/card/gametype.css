@@ -1,0 +1,48 @@
+.gametype-container {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.gametype {
+    width: 25rem;
+    height: 12rem;
+    border: 2px solid gray;
+    filter: grayscale(100%); /* rend l'image en noir et blanc */
+    border-radius: 2px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color : white;
+    flex-direction: column;
+}
+
+.gametype-background {
+    width: 100%;
+    height: 80%;
+    background-image:
+            linear-gradient(to top, black, transparent),
+            url("../../assets/cards/card21.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.gametype-name-container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto mono";
+    font-size: 28px;
+    text-transform: uppercase;
+}
