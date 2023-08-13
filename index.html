@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="css/button/button-leave-room.css">
 <link rel="stylesheet" href="css/button/dropdown.css">
 <link rel="stylesheet" href="css/card/card.css">
+<link rel="stylesheet" href="css/card/matchtype.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,8 +28,37 @@
             <a href="#">Option 3</a>
         </div>
     </div>
-    <div class="game-card" data-mode="snd">
-        <h2>Search & Destroy</h2>
+
+    <div class="container-card">
+        <div class="matchtype-card">
+            <p class="text-container">
+                <span class="matchtype-title">UNRANKED</span>
+                <br />
+                <span class="matchtype-subTitle">ENTER THE BATTLEFIELD</span>
+                <br />
+                <span class="matchtype-description">et glou glou et glou glou glou glou glou glou</span>
+            </p>
+        </div>
+
+        <div class="matchtype-card-ranked">
+            <p class="text-container">
+                <span class="matchtype-title">RANKED</span>
+                <br />
+                <span class="matchtype-subTitle">ENTER THE BATTLEFIELD</span>
+                <br />
+                <span class="matchtype-description">et glou glou et glou glou glou glou glou glou</span>
+            </p>
+        </div>
     </div>
+
+<script>
+    document.querySelector('.matchtype-card').addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+    document.querySelector('.matchtype-card-ranked').addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>
