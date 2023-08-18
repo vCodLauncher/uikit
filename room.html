@@ -1,10 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="../assets/css/gamepage.css" xmlns="" xmlns="http://www.w3.org/1999/html">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:wght@300;400;500;600;700&family=Staatliches&display=swap"
+        rel="stylesheet">
+
+
 </head>
+
+<style>
+    body,html {
+        background-color: #222;
+        /* background-image: url('assets/cards/card15.jpeg');
+        background-size: cover; */
+    }
+
+    .box {
+        font-family: Poppins;
+        color: white;
+        height: fit-content;
+        padding: 1rem;
+        background-color: #111;
+        border-radius: 10px;
+        margin: 10px 5px;
+    }
+
+    .box.lobby-info {
+        width: 300px;
+    }
+
+    .box.lobby-info .room-status {
+        font-size: 14px;
+    }
+
+    .box .title {
+        font-family: Poppins;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: -10px;
+        color: white;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    .box .subtitle {
+        font-size: 10px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.594);
+        text-transform: uppercase;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .box .leave-button {
+        background-color: #ce2424;
+        color: #ffffff;
+        border-radius: 4px;
+        width: fit-content;
+        padding: 2px 8px;
+        font-weight: 900;
+        margin: 10px 0px;
+    }
+
+
+    .box.vote-map-info {
+        width: calc(67vw - 50px);
+        position: absolute;
+        bottom: 0;
+        padding: 20px 0px 20px 20px;
+    }
+
+    .box.vote-map-info .title {
+        margin-bottom: 20px;
+        /* width: 100vw; */
+        height: 10px;
+    }
+
+    .box.vote-map-info .title .select-map {
+        background-color: white;
+        padding: 2px 5px;
+        color: #000;
+        font-size: 12px;
+        border-radius: 10px;
+        margin-left: 10px;
+        cursor:pointer;
+    }
+    
+    .box.vote-map-info .title .select-map:hover {
+        color:white;
+        background-color: #ff2c2c;
+    }
+
+    .box.vote-map-info .map-container {
+        display: flex;
+        column-gap: 15px;
+        /* This is the gap between flex items */
+        align-items: flex-start;
+        overflow-y: auto;
+        width: calc(100% - 40px);
+        padding: 0px 10px;
+        /* padding-left:10px; */
+    }
+
+
+    .map-container::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .map-container::-webkit-scrollbar-track {
+        background: #ce24246d;
+        border-radius: 50px;
+    }
+
+    .map-container::-webkit-scrollbar-thumb {
+        background-color: #ce2424;
+        border-radius: 50px;
+        border: 3px solid #ce2424;
+    }
+
+
+
+    .box.vote-map-info .map {
+        width: 200px;
+        height: 100px;
+        background-size: contain;
+        cursor: pointer;
+        transition: all 0.1s;
+        filter: brightness(.9);
+        margin: 25px 0px;
+        flex: 0 0 auto;
+        position: relative;
+        /* margin: 10px; */
+    }
+
+    .box.vote-map-info .map:hover {
+        filter: brightness(1.10);
+        transform: scale(1.03);
+
+    }
+
+    .box.vote-map-info .map .map-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        position: absolute;
+        top: 88px;
+        left: 1px;
+        /* padding: 0px 10px; */
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        /* padding: 2px 8px; */
+        box-sizing: border-box;
+        text-align: center;
+        /* text-align: left; */
+        /* border-radius: 0px 0px 5px 5px; */
+
+    }
+
+    .box.vote-map-info img {
+        max-width: 100%;
+        /* height: 100px; */
+        display: block;
+        /* border-radius: 5px; */
+        border: 1px solid black;
+    }
+
+
+    .box.player-list{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: calc(100% - 50px);
+        width: 400px;
+        background-color: #111;
+    }
+
+    .box.player-list .container{
+        display: flex;
+        
+    }
+    .box.player-list #players-left{
+        font-size: 12px;
+        font-weight: 300;
+        padding-left: 10px;
+        padding-top: 5px;
+        width: 100%;
+        text-align: right;
+    }
+
+    .box.player-list table{
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .box.player-list table thead tr th{
+        text-align: start;
+        background-color: #00000060;
+        border-top: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+    }
+    .box.player-list table th, table td {
+        border: 1px solid #000000; 
+         /* border-right: 2px solid #000; */
+    }
+    .box.player-list table th, table td{ /* Added padding for better layout after collapsing */
+        padding: 4px 8px;
+    }    
+    .box.player-list table tr td img{ /* Added padding for better layout after collapsing */
+        padding: 0 10px 0 0;
+    }
+
+    /*     
+
+   
+    
+   
+    
+    */
+</style>
+
 <body>
 
+    <section class="container">
+        <div class="box lobby-info">
+            <div id="room-type" class="title">COD1 — Search & Destroy</div>
+            <span id="room-server" class="subtitle">na.codlauncher.net/lobby/6178</span>
+            <div id="room-server-status" class="room-status">Latency: <span style="color : green">34ms</span></div>
+
+            <div id="quit-btn" class="leave-button">Leave room</div>
+        </div>
+
+        <div class="box vote-map-info">
+            <div id="room-type" class="title">
+                Map Votes
+                <span class="select-map">Select map</span>
+
+            </div>
+            <div class="map-container">
+                <div class="card map">
+                    <div class="map-title">Carentan — 5 votes</div>
+                    <img src="assets/games/cod1/maps/carentan.webp">
+                </div>
+                <div class="map">
+                    <div class="map-title">Brecourt — 3 votes</div>
+                    <img src="assets/games/cod1/maps/brecourt.webp">
+                </div>
+                <div class="map">
+                    <div class="map-title">Neuville — 1 vote</div>
+                    <img src="assets/games/cod1/maps/Neuville.webp">
+                </div>
+                <div class="map">
+                    <div class="map-title">Harbor — 1 vote</div>
+                    <img src="assets/games/cod1/maps/Harbor.webp">
+                </div>
+                <div class="map">
+                    <div class="map-title">Railyard — 1 vote</div>
+                    <img src="assets/games/cod1/maps/Railyard.webp">
+                </div>
+                <div class="map">
+                    <div class="map-title">Pavlov — 1 vote</div>
+                    <img src="assets/games/cod1/maps/Pavlov.webp">
+                </div>
+                <div class="map">
+                    <div class="map-title">Depot — 1 vote</div>
+                    <img src="assets/games/cod1/maps/Depot.webp">
+                </div>
+            </div>
+        </div>
+
+        <div class="box player-list">
+            <div class="container">
+                
+                <span class="title">Player list </span>
+                <!-- <span id="players-left">waiting for 3 more...</span> -->
+                <span id="players-left">Waiting a 3 more players...</span>
+
+            </div>
+
+
+            <table>
+                <thead>
+                    <!-- <th style="width: 20px;">🌐</th> -->
+                    <th>Player</th>
+                    <th>Ping</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="assets/flags/cl.png">inuckles</td>
+                        <td><span class="ping">117ms</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/flags/fr.png">wysix</td>
+                        <td><span class="ping">34ms</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/flags/de.png">Brejax</td>
+                        <td><span class="ping">58ms</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/flags/fr.png">DoDo Le Reporter</td>
+                        <td><span class="ping">41ms</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+    <script src="../gameAction/gameStart.js"></script>
+    <script src="../gameAction/gamePage.js"></script>
+    <script src="../gameAction/roomManager.js"></script>
+
+
 </body>
+
 </html>
